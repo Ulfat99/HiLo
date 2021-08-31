@@ -7,11 +7,12 @@
             String playAgain = "";
             do {
                 // Генерация случайного числа
-                int theNumber = (int) (Math.random() * 100 + 1);
+                int theNumber = (int) (Math.random() * 200 - 100);
                 System.out.println(theNumber);
+                int numberOfTries = 0;
                 int guess = 0;
                 while (guess != theNumber) {
-                    System.out.println("Guess a number between 1 and 100:");
+                    System.out.println("Guess a number between -100 and 100:");
                     guess = scan.nextInt();
                     if (guess < theNumber)
                         System.out.println(guess + " is too low. Try again.");
@@ -19,6 +20,8 @@
                         System.out.println(guess + " is too high. Try again.");
                     else
                         System.out.println(guess + " is correct. You win!");
+                    numberOfTries = numberOfTries + 1;
+                    System.out.println(" It only took you " + numberOfTries + " tries! Good Work! ");
                     //Конец цикла угадывания while
 
                 }
